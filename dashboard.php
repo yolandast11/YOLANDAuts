@@ -58,3 +58,11 @@ if ($mode == 7) {
 
     exit;
 }
+if ($mode == 8) {
+
+    $grandtotal = 175000; // bisa ubah manual
+
+    echo "Total Belanja: Rp " . number_format($grandtotal, 0, ',', '.');
+
+    exit;
+}
