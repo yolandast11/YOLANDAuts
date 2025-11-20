@@ -34,3 +34,27 @@ if ($mode == 6) {
 
     exit;
 }
+if ($mode == 7) {
+
+    echo "-- Detail Pembelian (Foreach) --\n\n";
+
+    $produk = [
+        ["nama" => "Roti", "harga" => 12000, "qty" => 2],
+        ["nama" => "Susu", "harga" => 15000, "qty" => 1],
+        ["nama" => "Telur", "harga" => 26000, "qty" => 3],
+    ];
+
+    $grandtotal = 0;
+
+    foreach ($produk as $p) {
+        $total = $p["harga"] * $p["qty"];
+        $grandtotal += $total;
+
+        echo $p["nama"] . " | Qty: " . $p["qty"] .
+             " | Total: Rp " . number_format($total, 0, ',', '.') . "\n";
+    }
+
+    echo "\nGrand Total: Rp " . number_format($grandtotal, 0, ',', '.');
+
+    exit;
+}
