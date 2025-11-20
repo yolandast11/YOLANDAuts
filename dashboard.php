@@ -66,3 +66,25 @@ if ($mode == 8) {
 
     exit;
 }
+if ($mode == 9) {
+
+    $total_belanja = 120000; // bisa kamu ubah
+
+    if ($total_belanja < 50000) {
+        $diskon = 0.05;
+    } elseif ($total_belanja >= 50000 && $total_belanja <= 100000) {
+        $diskon = 0.10;
+    } else {
+        $diskon = 0.15;
+    }
+
+    $potongan = $total_belanja * $diskon;
+    $total_akhir = $total_belanja - $potongan;
+
+    echo "Total Belanja: Rp " . number_format($total_belanja, 0, ',', '.') . "\n";
+    echo "Diskon: " . ($diskon * 100) . "%\n";
+    echo "Potongan: Rp " . number_format($potongan, 0, ',', '.') . "\n";
+    echo "Total Akhir: Rp " . number_format($total_akhir, 0, ',', '.');
+
+    exit;
+}
