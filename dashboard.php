@@ -1,4 +1,25 @@
 <?php
+
+// ===============================
+// CEK MODE INPUT (commit yang dipilih)
+// ===============================
+$mode = isset($argv[1]) ? $argv[1] : null;
+
+if (!$mode) {
+    echo "Gunakan: php dashboard.php [5|6|7|8|9]\n";
+    exit;
+}
+
+// ===============================
+// DATA PRODUK (Dipakai Commit 5 & 6)
+// ===============================
+$kode_barang = ["BRG01", "BRG02", "BRG03", "BRG04", "BRG05"];
+$nama_barang = ["Roti", "Susu", "Telur", "Gula", "Minyak"];
+$harga_barang = [12000, 15000, 26000, 14000, 22000];
+
+// ===============================
+// MODE COMMIT 5
+// ===============================
 if ($mode == 5) {
 
     echo "-- POLGAN MART --\n\n";
@@ -12,6 +33,11 @@ if ($mode == 5) {
 
     exit;
 }
+
+
+// ===============================
+// MODE COMMIT 6 – Penjualan Random
+// ===============================
 if ($mode == 6) {
 
     echo "-- POLGAN MART (Penjualan Random) --\n\n";
@@ -34,6 +60,12 @@ if ($mode == 6) {
 
     exit;
 }
+
+
+
+// ===============================
+// MODE COMMIT 7 – Perhitungan Total (Foreach)
+// ===============================
 if ($mode == 7) {
 
     echo "-- Detail Pembelian (Foreach) --\n\n";
@@ -58,6 +90,12 @@ if ($mode == 7) {
 
     exit;
 }
+
+
+
+// ===============================
+// MODE COMMIT 8 – Cetak Total Belanja
+// ===============================
 if ($mode == 8) {
 
     $grandtotal = 175000; // bisa ubah manual
@@ -66,6 +104,12 @@ if ($mode == 8) {
 
     exit;
 }
+
+
+
+// ===============================
+// MODE COMMIT 9 – Diskon Belanja
+// ===============================
 if ($mode == 9) {
 
     $total_belanja = 120000; // bisa kamu ubah
@@ -88,3 +132,10 @@ if ($mode == 9) {
 
     exit;
 }
+
+
+
+// ===============================
+// Jika mode tidak ditemukan
+// ===============================
+echo "Mode tidak valid. Gunakan 5, 6, 7, 8, atau 9.\n";
